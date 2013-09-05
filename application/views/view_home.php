@@ -13,7 +13,7 @@
 			</a>
 		</div>
 		<div class="col-md-4">
-			<a href="">
+			<a href="promos">
 			<img src="assets/img/promociones.jpg" width="39%" heigth="39%" class="img-rounded" title="Cree y administre promociones para sus clientes" id="img_promociones">
 			<h3 class="letrabonita">Promociones</h3>
 			</a>
