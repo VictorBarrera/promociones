@@ -1,0 +1,14 @@
+.center { text-align: center !important }
+.right { text-align: right; }
+.left { text-align: left; }
+.borde{
+	border-style: solid;
+	border-width: medium;
+	border-collapse:collapse;
+	border-color: navy;
+	padding: 0;
+	padding-bottom: 0;
+}
+body{
+	
+}
