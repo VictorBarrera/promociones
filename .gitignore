@@ -2,6 +2,9 @@
 ## Eclipse
 #################
 
+application/config/config.php
+application/config/database.php
+
 *.pydevproject
 .project
 .metadata
