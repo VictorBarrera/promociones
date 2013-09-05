@@ -9,6 +9,15 @@
 	padding: 0;
 	padding-bottom: 0;
 }
-body{
-	
+.letrabonita{
+	font-weight: 800;
+	font-size: large;
+	text-shadow: 5px 5px 5px #aaa;
+	color: navy;
 }
+ .tooltip.top .tooltip-arrow {
+ 	border-top-color:#A9D0F5;
+    text-shadow: 5px 5px 5px #aaa;
+ }
+ .tooltip-inner {background-color:#A9D0F5; color:navy;font-family: verdana; font-size: small;}
+

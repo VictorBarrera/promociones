@@ -30,7 +30,7 @@
                       <span class="icon-bar"></span>
                       <span class="icon-bar"></span>
                     </button>
-                    <a class="navbar-brand" href="#">Inicio</a>
+                    <a class="navbar-brand" href="home">Inicio</a>
                   </div>
                   <div class="navbar-collapse collapse navbar-inverse-collapse">
                     <ul class="nav navbar-nav">
@@ -54,9 +54,7 @@
               </div><!-- /.navbar -->
           </div>
     </div>
-    <div class="row">
-          <div class="col-md-12">
-                <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+              
         
        
                     
