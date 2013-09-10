@@ -12,6 +12,9 @@
       <script type="application/x-javascript" src="assets/js/jquery.validate.js"></script>
       <script type="application/x-javascript" src="assets/js/bootstrap.min.js"></script>
       <script type="application/x-javascript" src="assets/js/bootbox.min.js"></script>
+      <script type="application/x-javascript" src="assets/js/jquery.maskedinput.min.js"></script>
+
+     
 </head>
 <body>
       <div class="container borde">
@@ -30,12 +33,12 @@
                       <span class="icon-bar"></span>
                       <span class="icon-bar"></span>
                     </button>
-                    <a class="navbar-brand" href="home">Inicio</a>
+                    <a class="navbar-brand" href="home"><span class="glyphicon glyphicon-home"></span>&nbsp;Inicio</a>
                   </div>
                   <div class="navbar-collapse collapse navbar-inverse-collapse">
                     <ul class="nav navbar-nav">
                       <li class="active"><a href="#">Clientes</a></li>
-                      <li><a href="#">Promociones</a></li>
+                      <li><a href="promos">Promociones</a></li>
                       <li class="dropdown">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown">Mantenimientos <b class="caret"></b></a>
                         <ul class="dropdown-menu">

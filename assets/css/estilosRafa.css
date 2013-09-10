@@ -20,4 +20,15 @@
     text-shadow: 5px 5px 5px #aaa;
  }
  .tooltip-inner {background-color:#A9D0F5; color:navy;font-family: verdana; font-size: small;}
+ .label{
+     font-weight: 500;
+     font-size: 13px;
+     color:navy;
+    text-shadow: 5px 5px 5px #aaa; 
+    font-family: verdana;
+ }
+
+ .up{
+ 	vertical-align: top;
+ }
 
