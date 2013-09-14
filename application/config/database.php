@@ -45,6 +45,22 @@
 | the active record class
 */
 
+$db['sqlsrv']['hostname'] = 'OCHEVEZ-PC'; //el ip o nombre del Servidor SQL
+$db['sqlsrv']['username'] = 'ochevez-PC';
+$db['sqlsrv']['password'] = '';
+$db['sqlsrv']['database'] = 'etps4_tienda';
+$db['sqlsrv']['dbdriver'] = 'sqlsrv'; //si, poner sqlsrv
+$db['sqlsrv']['dbprefix'] = '';
+$db['sqlsrv']['pconnect'] = FALSE; //ponerlo a False
+$db['sqlsrv']['db_debug'] = TRUE;
+$db['sqlsrv']['cache_on'] = FALSE;
+$db['sqlsrv']['cachedir'] = '';
+$db['sqlsrv']['char_set'] = 'utf8';
+$db['sqlsrv']['dbcollat'] = 'utf8_general_ci';
+$db['sqlsrv']['swap_pre'] = '';
+$db['sqlsrv']['autoinit'] = TRUE;
+$db['sqlsrv']['stricton'] = FALSE;
+
 $active_group = 'default';
 $active_record = TRUE;
 
