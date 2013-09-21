@@ -2,6 +2,13 @@
 
 class model_promociones extends CI_Model {
 
+	public function __construct(){
+
+		parent::__construct();
+
+		$this->load->database('default');
+	}
+
 	function guardar_promocion($data)
 	{
 		$ok = $this->db->insert('promociones',$data);
