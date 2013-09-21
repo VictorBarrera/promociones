@@ -61,7 +61,7 @@ $db['sqlsrv']['swap_pre'] = '';
 $db['sqlsrv']['autoinit'] = TRUE;
 $db['sqlsrv']['stricton'] = FALSE;
 
-$active_group = 'sqlsrv';
+$active_group = 'default';
 $active_record = TRUE;
 
 $db['default']['hostname'] = 'localhost';
