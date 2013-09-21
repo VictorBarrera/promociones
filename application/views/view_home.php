@@ -26,7 +26,7 @@
 	</div>
 	<div class="row">
 		<div class="col-md-4">
-			<a href="">
+			<a href="enviarcorreos">
 			<img src="assets/img/email.jpg" width="39%" heigth="39%" title="Envíele promociones asus clientes atraves de email" id="img_email">
 			<h3 class="letrabonita">Emails</h3>
 			</a>
