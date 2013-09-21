@@ -17,6 +17,28 @@ class cat_clientes extends CI_Controller {
 	}
 
 
+	function traer_compras(){
+
+		$data = array();
+
+		$Username = $this->input->post('Username');
+
+		$data['compras'] = $this->model_cat_clientes->traer_compras( $Username );
+
+		if( $data['compras'] == false ){
+
+			$data['type']    = false;
+			$data['message'] = 'El cliente no tiene compras';
+
+		}else{
+
+			$data['type'] = true;
+		}
+
+		$this->output->set_content_type('application/json')->set_output( json_encode( $data ) );
+	}
+
+
 
 }
 
