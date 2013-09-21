@@ -46,8 +46,8 @@
 */
 
 $db['sqlsrv']['hostname'] = 'OCHEVEZ-PC'; //el ip o nombre del Servidor SQL
-$db['sqlsrv']['username'] = 'ochevez-PC';
-$db['sqlsrv']['password'] = '';
+//$db['sqlsrv']['username'] = 'ochevez-PC';
+//$db['sqlsrv']['password'] = '';
 $db['sqlsrv']['database'] = 'etps4_tienda';
 $db['sqlsrv']['dbdriver'] = 'sqlsrv'; //si, poner sqlsrv
 $db['sqlsrv']['dbprefix'] = '';
@@ -61,7 +61,7 @@ $db['sqlsrv']['swap_pre'] = '';
 $db['sqlsrv']['autoinit'] = TRUE;
 $db['sqlsrv']['stricton'] = FALSE;
 
-$active_group = 'default';
+$active_group = 'sqlsrv';
 $active_record = TRUE;
 
 $db['default']['hostname'] = 'localhost';
