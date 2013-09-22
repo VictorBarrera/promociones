@@ -25,7 +25,7 @@
            </div>
     <div class="row">
       <div class="col-md-12">
-        <div class="navbar navbar-inverse">
+        <div class="navbar navbar-inverse" style="position:static">
                 <div class="container">
                   <div class="navbar-header">
                     <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-responsive-collapse">

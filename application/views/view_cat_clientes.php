@@ -8,7 +8,7 @@
 
 		<thead>
 
-			<th>Usuarios</th>
+			<th>Clientes</th>
 
 		</thead>
 

@@ -1,13 +1,13 @@
 <div class="container center">
 	<div class="row">
 		<div class="col-md-4 center">
-			<a href="">
+			<a href="javascript:void(0);">
 			<img src="assets/img/graficos.png" width="50%" heigth="50%" class="img-rounded" title="Vea el rendimiento del negocio" id="img_graficos">
 			<h3 class="letrabonita">Estadisticas</h3>
 			</a>
 		</div>
 		<div class="col-md-4">
-			<a href="">
+			<a href="cat_clientes">
 			<img src="assets/img/clientes.jpg" width="35%" heigth="35%" class="img-rounded" title="Administre todo lo relacionado a sus clientes" id="img_clientes">
 			<h3 class="letrabonita">Clientes</h3>
 			</a>
