@@ -2,11 +2,13 @@
 
 class model_cat_clientes extends CI_Model {
 
+	protected $sqlsrv = '';
+
 	public function __construct(){
 
 		parent::__construct();
 
-		$this->load->database('sqlsrv');
+		$this->sqlsrv = $this->load->database('sqlsrv', TRUE);
 	}
 
 
@@ -15,9 +17,11 @@ class model_cat_clientes extends CI_Model {
 
 	function traer_clientes(){
 
-		$this->db->select('Username');
-		$this->db->group_by('Username');
-		$query = $this->db->get('Orders');
+		$DB = $this->sqlsrv;
+
+		$DB->select('Username');
+		$DB->group_by('Username');
+		$query = $DB->get('Orders');
 		return ( $query->num_rows() > 0 ) ? $query->result_array() : false;
 	}
 
@@ -27,8 +31,11 @@ class model_cat_clientes extends CI_Model {
 
 
 	function traer_compras( $Username ){
-		$this->db->where('Username', $Username);
-		$query = $this->db->get('Orders');
+
+		$DB = $this->sqlsrv;
+
+		$DB->where('Username', $Username);
+		$query = $DB->get('Orders');
 		return ( $query->num_rows() > 0 ) ? $query->result_array() : false;
 	}
 

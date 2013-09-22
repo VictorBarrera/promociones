@@ -29,28 +29,29 @@ class cat_clientes extends CI_Controller {
 
 				}else{
 
-					//$this->load->model('model_cat_categorias');
+					$this->load->model('model_cat_categorias');
 
-					//$this->model_cat_categorias->traer_categoria( 'a' );
+					$cliente_c = $this->model_cat_categorias->traer_categoria( 'c' );
 
-					$cliente_c = array( 'desde' => 1, 'hasta' => 100 );
-
-					$cliente_b = array( 'desde' => 101, 'hasta' => 1000 );
+					$cliente_b = $this->model_cat_categorias->traer_categoria( 'b' );
 					
-					$cliente_a = array( 'desde' => 1001, 'hasta' => 1000000 );
+					$cliente_a = $this->model_cat_categorias->traer_categoria( 'a' );
 
-					if( $total_comprado >= $cliente_c['desde'] && $total_comprado <= $cliente_c['hasta'] ){
+					if( $total_comprado >= $cliente_c['valor_1'] && $total_comprado <= $cliente_c['valor_2'] ){
 
 						$data['clientes'][ $key ]['categoria'] = 'c';
 
-					}else if( $total_comprado >= $cliente_b['desde'] && $total_comprado <= $cliente_b['hasta'] ){
+					}else if( $total_comprado >= $cliente_b['valor_1'] && $total_comprado <= $cliente_b['valor_2'] ){
 
 						$data['clientes'][ $key ]['categoria'] = 'b';
 
-					}else if( $total_comprado >= $cliente_a['desde'] && $total_comprado <= $cliente_a['hasta'] ){
+					}else if( $total_comprado >= $cliente_a['valor_1'] && $total_comprado <= $cliente_a['valor_2'] ){
 
 						$data['clientes'][ $key ]['categoria'] = 'a';
 
+					}else{
+
+						$data['clientes'][ $key ]['categoria'] = false;
 					}
 				}
 			}

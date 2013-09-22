@@ -21,7 +21,7 @@
 
 			'a'     => 'green',
 			'b'     => 'yellow',
-			'c'     => 'orange',
+			'c'     => 'red',
 			false => '#FFFFFF'
 
 			);
@@ -153,7 +153,7 @@ function dialogo( title, msj ){
 	$( "#dialogo" ).dialog({
 		title    : title,
         autoOpen : true,
-        height   : 200,
+        //height   : 200,
         width    : 350,
         modal    : true,
         resizable: false,
