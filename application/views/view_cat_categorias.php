@@ -7,13 +7,16 @@
 	<table class="table">
 		<thead>
 			<th></th>
-			<th>Reglas de validación</th>
+			<th>Regla de validación 1</th>
+			<th>Regla de validación 2</th>
 		</thead>
 		<tbody>
 			<tr>
 				<td><a href="javascript:void(0);" onclick="load_edit('a')">Categoría a</a></td>
-				<td id="fila_a">
-					Por compras mayores o igual que: $<?php echo $a['valor_1'] ?><br>
+				<td id="fila_1_a">
+					Por compras mayores o igual que: $<?php echo $a['valor_1'] ?>
+				</td>
+				<td id="fila_2_a">
 					Por compras menores o igual que: $<?php echo $a['valor_2'] ?> 
 				</td>
 				<input type="hidden" id="a_valor_1" value="<?php echo $a['valor_1'] ?>">
@@ -21,8 +24,10 @@
 			</tr>
 			<tr>
 				<td><a href="javascript:void(0);" onclick="load_edit('b')">Categoría b</a></td>
-				<td id="fila_b">
-					Por compras mayores o igual que: $<?php echo $b['valor_1'] ?><br>
+				<td id="fila_1_b">
+					Por compras mayores o igual que: $<?php echo $b['valor_1'] ?>
+				</td>
+				<td id="fila_2_b">
 					Por compras menores o igual que: $<?php echo $b['valor_2'] ?>
 				</td>
 				<input type="hidden" id="b_valor_1" value="<?php echo $b['valor_1'] ?>">
@@ -30,8 +35,10 @@
 			</tr>
 			<tr>
 				<td><a href="javascript:void(0);" onclick="load_edit('c')">Categoría c</a></td>
-				<td id="fila_c">
-					Por compras mayores o igual que: $<?php echo $c['valor_1'] ?><br>
+				<td id="fila_1_c">
+					Por compras mayores o igual que: $<?php echo $c['valor_1'] ?>
+				</td>
+				<td id="fila_2_c"> 
 					Por compras menores o igual que: $<?php echo $c['valor_2'] ?>
 				</td>
 				<input type="hidden" id="c_valor_1" value="<?php echo $c['valor_1'] ?>">
@@ -142,11 +149,13 @@ function edit_categoria( categoria ){
 
 				nueva_regla  = 'Por compras mayores o igual que: $';
 				nueva_regla += data['categoria'].valor_1;
-				nueva_regla += '<br>';
-				nueva_regla += 'Por compras menores o igual que: $';
+
+				$('#fila_1_'+categoria).html( nueva_regla );
+
+				nueva_regla  = 'Por compras menores o igual que: $';
 				nueva_regla += data['categoria'].valor_2;
 
-				$('#fila_'+categoria).html( nueva_regla );
+				$('#fila_2_'+categoria).html( nueva_regla );
 			}
 		},
 		error : function(){
