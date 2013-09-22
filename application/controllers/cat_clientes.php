@@ -29,6 +29,10 @@ class cat_clientes extends CI_Controller {
 
 				}else{
 
+					//$this->load->model('model_cat_categorias');
+
+					//$this->model_cat_categorias->traer_categoria( 'a' );
+
 					$cliente_c = array( 'desde' => 1, 'hasta' => 100 );
 
 					$cliente_b = array( 'desde' => 101, 'hasta' => 1000 );

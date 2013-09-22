@@ -7,7 +7,7 @@
 	<table class="table">
 		<thead>
 			<th></th>
-			<th></th>
+			<th>Reglas de validación</th>
 		</thead>
 		<tbody>
 			<tr>
@@ -76,7 +76,7 @@
 function load_edit( categoria ){
 
 	$( "#edit_categoria" ).dialog({
-		title    : 'Editar categoria '+categoria,
+		title    : 'Editar categoría '+categoria,
         autoOpen : true,
         height   : 200,
         width    : 450,
