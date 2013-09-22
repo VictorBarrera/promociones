@@ -10,6 +10,9 @@ class model_cat_clientes extends CI_Model {
 	}
 
 
+
+
+
 	function traer_clientes(){
 
 		$this->db->select('Username');
@@ -20,10 +23,39 @@ class model_cat_clientes extends CI_Model {
 
 
 
+
+
+
 	function traer_compras( $Username ){
 		$this->db->where('Username', $Username);
 		$query = $this->db->get('Orders');
 		return ( $query->num_rows() > 0 ) ? $query->result_array() : false;
+	}
+
+
+
+
+
+
+	function traer_total_comprado( $Username ){
+
+		$compras = $this->traer_compras( $Username );
+
+		if( $compras == false ){
+
+			return 0;
+
+		}else{
+
+			$total = 0;
+
+			foreach ($compras as $campos) {
+				
+				$total = $total + floatval( $campos['Total'] );
+			}
+
+			return $total;
+		}
 	}
 
 }

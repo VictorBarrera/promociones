@@ -26,6 +26,9 @@
                     		<td>Enviar a:</td>
                     		<td><select name="destinatarios" id="destinatarios">
                     			<option value="">Selecione</option>
+                    			<option value="1">a</option>
+                    			<option value="2">b</option>
+                    			<option value="3">c</option>
                     		</select></td>
                     	</tr>
                     	<tr><td colspan="2" class="center">

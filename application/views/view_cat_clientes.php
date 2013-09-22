@@ -9,18 +9,35 @@
 		<thead>
 
 			<th>Clientes</th>
+			<th>Categoría</th>
 
 		</thead>
 
 		<tbody>
 
+		<?php 
+
+		$colores = array(
+
+			'a'     => 'green',
+			'b'     => 'yellow',
+			'c'     => 'orange',
+			false => '#FFFFFF'
+
+			);
+
+		?>
+
 		<?php foreach ($clientes as $campo): ?>
 				
-			<tr>
+			<tr style="border-left: solid 2px <?php echo $colores[ $campo['categoria'] ] ?>" >
 				<td>
 					<a href="javascript:void(0);" onclick="traer_compras( '<?php echo $campo['Username'] ?>' )">
 						<?php echo $campo['Username'] ?>
 					</a>
+				</td>
+				<td>
+					<b><?php echo $campo['categoria'] ?></b>
 				</td>
 			</tr>
 
