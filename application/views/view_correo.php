@@ -1,4 +1,6 @@
 <div class="container">
+
+
 	<div class="row">
 		<div class="col-md-12"></div>
 	</div>
@@ -26,9 +28,9 @@
                     		<td>Enviar a:</td>
                     		<td><select name="destinatarios" id="destinatarios">
                     			<option value="">Selecione</option>
-                    			<option value="1">Clientes de categoría a</option>
-                    			<option value="2">Clientes de categoría b</option>
-                    			<option value="3">Clientes de categoría c</option>
+                    			<option value="a">Clientes de categoría a</option>
+                    			<option value="b">Clientes de categoría b</option>
+                    			<option value="c">Clientes de categoría c</option>
                     		</select></td>
                     	</tr>
                     	<tr><td colspan="2" class="center">
@@ -46,32 +48,73 @@
 	<div class="row">
 		<div class="col-md-12"></div>
 	</div>
+
+	
+	<!-- DIALOGO -->
+	<div style="display:none" id="dialogo">
+		<div id="msj_dialogo" style="text-align:center;margin:10px"></div>
+	</div>
+	<!-- FIN DIALOGO -->
+
+
 </div>
 
+
+
 <script>
+
 	$("#form_correo").validate({
+
 		submitHandler: function(form){
 			$.ajax({
-				url:$("#form_correo").attr('action') ,
-				type:'post',
-				datatype:'json',
-				data:$("#form_correo").serialize(),
-				 beforeSend: function() { 
-			            $("#").hide();
-			            $("#enviando").html('<img src="assets/img/sending_mail.gif" alt="">Enviando...') 
-			           },
-			     success: function(data){
-			            if(data.ok)
-			              {
-			                  $("#form_correo")[0].reset();
-			              }   
-			            else
-			              {
-			
-			              } 
-			      $("#enviando").html('');           
+				url 	 : $("#form_correo").attr('action') ,
+				type 	 : 'post',
+				datatype : 'json',
+				data 	 : $("#form_correo").serialize(),
+
+				beforeSend: function() { 
+
+			        $("#").hide();
+
+			        $("#enviando").html('<img src="assets/img/sending_mail.gif" alt="">Enviando...');
+			    },
+			    success: function(data){
+
+			        if(data.ok){
+
+			            $("#form_correo")[0].reset();
+
+			            dialogo('Notificación', data.msg );
+
+			        }else{
+						
+						dialogo('Error', data.msg );
+			        } 
+
+			      	$("#enviando").html('');           
 			    }
 			});
 		}
 	});
+	/*------------------------------------------------------------------------------------------*/
+	function dialogo( title, msj ){
+
+	$( "#dialogo" ).dialog({
+		title    : title,
+        autoOpen : true,
+        //height   : 200,
+        width    : 350,
+        modal    : true,
+        resizable: false,
+        buttons: {
+        	"Cerrar": function() {
+            	$( this ).dialog( "close" );
+        	}
+        },
+        open: function(){
+        	$('#msj_dialogo').html(msj);
+        }
+    });        
+}
+
 </script>
