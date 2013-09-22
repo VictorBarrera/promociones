@@ -9,6 +9,7 @@
 			<th></th>
 			<th>Regla de validación 1</th>
 			<th>Regla de validación 2</th>
+			<th></th>
 		</thead>
 		<tbody>
 			<tr>
@@ -18,6 +19,11 @@
 				</td>
 				<td id="fila_2_a">
 					Por compras menores o igual que: $<?php echo $a['valor_2'] ?> 
+				</td>
+				<td>
+					<div id="color_a" style="clear:both">
+						<div style="background-color:green;height:30px;width:30px"></div>
+					</div>
 				</td>
 				<input type="hidden" id="a_valor_1" value="<?php echo $a['valor_1'] ?>">
 				<input type="hidden" id="a_valor_2" value="<?php echo $a['valor_2'] ?>">
@@ -30,6 +36,11 @@
 				<td id="fila_2_b">
 					Por compras menores o igual que: $<?php echo $b['valor_2'] ?>
 				</td>
+				<td>
+					<div id="color_b" style="clear:both">
+						<div style="background-color:yellow;height:30px;width:30px"></div>
+					</div>
+				</td>
 				<input type="hidden" id="b_valor_1" value="<?php echo $b['valor_1'] ?>">
 				<input type="hidden" id="b_valor_2" value="<?php echo $b['valor_2'] ?>">
 			</tr>
@@ -40,6 +51,11 @@
 				</td>
 				<td id="fila_2_c"> 
 					Por compras menores o igual que: $<?php echo $c['valor_2'] ?>
+				</td>
+				<td>
+					<div id="color_c" style="clear:both">
+						<div style="background-color:red;height:30px;width:30px"></div>
+					</div>
 				</td>
 				<input type="hidden" id="c_valor_1" value="<?php echo $c['valor_1'] ?>">
 				<input type="hidden" id="c_valor_2" value="<?php echo $c['valor_2'] ?>">
@@ -76,9 +92,85 @@
 	</div>
 	<!-- FIN DIALOGO -->
 
+	
+
 </div>
 
 <script>
+/*---------------------------------------------------------------------*/
+var hexDigits = new Array
+        ("0","1","2","3","4","5","6","7","8","9","a","b","c","d","e","f"); 
+
+//Function to convert hex format to a rgb color
+function rgb2hex(rgb) {
+ rgb = rgb.match(/^rgb\((\d+),\s*(\d+),\s*(\d+)\)$/);
+ return "#" + hex(rgb[1]) + hex(rgb[2]) + hex(rgb[3]);
+}
+
+function hex(x) {
+  return isNaN(x) ? "00" : hexDigits[(x - x % 16) / 16] + hexDigits[x % 16];
+ }
+
+/*---------------------------------------------------------------------*/
+$('#color_a').ColorPicker({
+
+	color: rgb2hex( $('#color_a div').css( "background-color" ) ),
+
+	onShow: function (colpkr) {
+
+		$(colpkr).fadeIn(500);
+		return false;
+	},
+	onHide: function (colpkr) {
+
+		$(colpkr).fadeOut(500);
+		return false;
+	},
+
+	onChange: function (hsb, hex, rgb) {
+		$('#color_a div').css('backgroundColor', '#' + hex);
+	}
+});
+/*---------------------------------------------------------------------*/
+$('#color_b').ColorPicker({
+
+	color: rgb2hex( $('#color_b div').css( "background-color" ) ),
+
+	onShow: function (colpkr) {
+
+		$(colpkr).fadeIn(500);
+		return false;
+	},
+	onHide: function (colpkr) {
+
+		$(colpkr).fadeOut(500);
+		return false;
+	},
+
+	onChange: function (hsb, hex, rgb) {
+		$('#color_b div').css('backgroundColor', '#' + hex);
+	}
+});
+/*---------------------------------------------------------------------*/
+$('#color_c').ColorPicker({
+
+	color: rgb2hex( $('#color_c div').css( "background-color" ) ),
+
+	onShow: function (colpkr) {
+
+		$(colpkr).fadeIn(500);
+		return false;
+	},
+	onHide: function (colpkr) {
+
+		$(colpkr).fadeOut(500);
+		return false;
+	},
+
+	onChange: function (hsb, hex, rgb) {
+		$('#color_c div').css('backgroundColor', '#' + hex);
+	}
+});
 /*---------------------------------------------------------------------*/
 function load_edit( categoria ){
 

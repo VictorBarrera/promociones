@@ -15,6 +15,9 @@
       <script type="application/x-javascript" src="assets/js/jquery.maskedinput.min.js"></script>
       <script type="application/x-javascript" src="assets/js/app.js"></script>
 
+      <link rel="stylesheet" media="screen" type="text/css" href="colorpicker/css/colorpicker.css" />
+      <script type="text/javascript" src="colorpicker/js/colorpicker.js"></script>
+
      
 </head>
 <body>
