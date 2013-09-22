@@ -30,7 +30,9 @@ class cat_clientes extends CI_Controller {
 				}else{
 
 					$cliente_c = array( 'desde' => 1, 'hasta' => 100 );
+
 					$cliente_b = array( 'desde' => 101, 'hasta' => 1000 );
+					
 					$cliente_a = array( 'desde' => 1001, 'hasta' => 1000000 );
 
 					if( $total_comprado >= $cliente_c['desde'] && $total_comprado <= $cliente_c['hasta'] ){

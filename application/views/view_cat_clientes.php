@@ -168,18 +168,4 @@ function dialogo( title, msj ){
     });        
 }
 /*---------------------------------------------------------------------*/
-function format_dollar( valor ){
-
-    if (valor=='') {return '$ 00.00'};
-
-    valu = Number(valor);
-
-    var p = valu.toFixed(2).split(".");
-
-    return "$ " + p[0].split("").reverse().reduce(function(acc, valu, i, orig) {
-
-        return  valu + (i && !(i % 3) ? "," : "") + acc;
-
-    }, "") + "." + p[1];
-}
 </script>
