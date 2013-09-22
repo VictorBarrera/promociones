@@ -53,6 +53,7 @@ class cat_clientes extends CI_Controller {
 		}
 
 		$data['page'] = "view_cat_clientes";
+		
 		$this->load->view('view_plantilla',$data);
 	}
 

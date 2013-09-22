@@ -39,7 +39,7 @@
 				Por compras mayores o igual que:
 			</div>
 			<div style="float:right">
-				<input type="text" id="valor_1" style="width:110px" class="right money">
+				<input type="text" id="valor_1" style="width:110px">
 			</div>
 		</div>
 		<br><br>
@@ -48,7 +48,7 @@
 				Por compras menores o igual que:
 			</div>
 			<div style="float:right">
-				<input type="text" id="valor_2" style="width:110px" class="right money">
+				<input type="text" id="valor_2" style="width:110px">
 			</div>
 		</div>
 	</div>
@@ -86,28 +86,29 @@ function load_edit( categoria ){
         },
         open: function(){
 
+        	$('#valor_1, #valor_2').val('');
+
         	$('#valor_1').val( $('#'+categoria+'_valor_1').val() );
         	$('#valor_2').val( $('#'+categoria+'_valor_2').val() );
         	
         },
-        close: function(){
-        	$('#valor_1, #valor_2').val('');
-        }
+        close: function(){}
     });        
 }
 /*---------------------------------------------------------------------*/
 function edit_categoria( categoria ){
 
-	data = {
-		valor_1 : $.trim( $('#valor_1').val() ),
-		valor_2 : $.trim( $('#valor_2').val() )
+	datos = {
+		categoria : categoria,
+		valor_1   : $.trim( $('#valor_1').val() ),
+		valor_2   : $.trim( $('#valor_2').val() )
 	}
 
 	$.ajax({
 		url      : '<?php echo base_url() ?>cat_categorias/edit_categoria',
 		type     : 'post',
 		dataType : 'json',
-		data     : data,
+		data     : datos,
 
 		beforeSend : function(){
 
@@ -116,6 +117,19 @@ function edit_categoria( categoria ){
 		success : function(data){
 
 			$('#msj').empty();
+
+			if( data.type == false ){
+
+				dialogo('Error', data.message);
+
+			}else{
+
+				dialogo('Notificación', 'Detalles guardados.');
+
+				$('#'+categoria+'_valor_1').val( data['categoria'].valor_1 );
+				$('#'+categoria+'_valor_2').val( data['categoria'].valor_2 );
+
+			}
 		},
 		error : function(){
 
@@ -131,7 +145,7 @@ function dialogo( title, msj ){
 	$( "#dialogo" ).dialog({
 		title    : title,
         autoOpen : true,
-        height   : 200,
+        //height   : 200,
         width    : 350,
         modal    : true,
         resizable: false,
@@ -146,18 +160,4 @@ function dialogo( title, msj ){
     });        
 }
 /*---------------------------------------------------------------------*/
-function format_dollar( valor ){
-
-    if (valor=='') {return '$ 00.00'};
-
-    valu = Number(valor);
-
-    var p = valu.toFixed(2).split(".");
-
-    return "$ " + p[0].split("").reverse().reduce(function(acc, valu, i, orig) {
-
-        return  valu + (i && !(i % 3) ? "," : "") + acc;
-
-    }, "") + "." + p[1];
-}
 </script>
