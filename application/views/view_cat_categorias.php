@@ -12,19 +12,28 @@
 		<tbody>
 			<tr>
 				<td><a href="javascript:void(0);" onclick="load_edit('a')">Categoría a</a></td>
-				<td></td>
+				<td id="fila_a">
+					Por compras mayores o igual que: $<?php echo $a['valor_1'] ?><br>
+					Por compras menores o igual que: $<?php echo $a['valor_2'] ?> 
+				</td>
 				<input type="hidden" id="a_valor_1" value="<?php echo $a['valor_1'] ?>">
 				<input type="hidden" id="a_valor_2" value="<?php echo $a['valor_2'] ?>">
 			</tr>
 			<tr>
 				<td><a href="javascript:void(0);" onclick="load_edit('b')">Categoría b</a></td>
-				<td></td>
+				<td id="fila_b">
+					Por compras mayores o igual que: $<?php echo $b['valor_1'] ?><br>
+					Por compras menores o igual que: $<?php echo $b['valor_2'] ?>
+				</td>
 				<input type="hidden" id="b_valor_1" value="<?php echo $b['valor_1'] ?>">
 				<input type="hidden" id="b_valor_2" value="<?php echo $b['valor_2'] ?>">
 			</tr>
 			<tr>
 				<td><a href="javascript:void(0);" onclick="load_edit('c')">Categoría c</a></td>
-				<td></td>
+				<td id="fila_c">
+					Por compras mayores o igual que: $<?php echo $c['valor_1'] ?><br>
+					Por compras menores o igual que: $<?php echo $c['valor_2'] ?>
+				</td>
 				<input type="hidden" id="c_valor_1" value="<?php echo $c['valor_1'] ?>">
 				<input type="hidden" id="c_valor_2" value="<?php echo $c['valor_2'] ?>">
 			</tr>
@@ -129,6 +138,15 @@ function edit_categoria( categoria ){
 				$('#'+categoria+'_valor_1').val( data['categoria'].valor_1 );
 				$('#'+categoria+'_valor_2').val( data['categoria'].valor_2 );
 
+				$('#fila_'+categoria).html('');
+
+				nueva_regla  = 'Por compras mayores o igual que: $';
+				nueva_regla += data['categoria'].valor_1;
+				nueva_regla += '<br>';
+				nueva_regla += 'Por compras menores o igual que: $';
+				nueva_regla += data['categoria'].valor_2;
+
+				$('#fila_'+categoria).html( nueva_regla );
 			}
 		},
 		error : function(){
