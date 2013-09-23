@@ -40,14 +40,17 @@ class cat_clientes extends CI_Controller {
 					if( $total_comprado >= $cliente_c['valor_1'] && $total_comprado <= $cliente_c['valor_2'] ){
 
 						$data['clientes'][ $key ]['categoria'] = 'c';
+						$data['clientes'][ $key ]['color']     = $cliente_c['color'];
 
 					}else if( $total_comprado >= $cliente_b['valor_1'] && $total_comprado <= $cliente_b['valor_2'] ){
 
 						$data['clientes'][ $key ]['categoria'] = 'b';
+						$data['clientes'][ $key ]['color']     = $cliente_b['color'];
 
 					}else if( $total_comprado >= $cliente_a['valor_1'] && $total_comprado <= $cliente_a['valor_2'] ){
 
 						$data['clientes'][ $key ]['categoria'] = 'a';
+						$data['clientes'][ $key ]['color']     = $cliente_a['color'];
 
 					}else{
 

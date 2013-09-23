@@ -15,22 +15,9 @@
 
 		<tbody>
 
-		<?php 
-
-		$colores = array(
-
-			'a'     => 'green',
-			'b'     => 'yellow',
-			'c'     => 'red',
-			false => '#FFFFFF'
-
-			);
-
-		?>
-
 		<?php foreach ($clientes as $campo): ?>
 				
-			<tr style="border-left: solid 2px <?php echo $colores[ $campo['categoria'] ] ?>" >
+			<tr style="border-left: solid 2px <?php echo $campo[ 'color' ] ?>" >
 				<td>
 					<a href="javascript:void(0);" onclick="traer_compras( '<?php echo $campo['Username'] ?>' )">
 						<?php echo $campo['Username'] ?>

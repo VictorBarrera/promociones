@@ -22,7 +22,7 @@
 				</td>
 				<td>
 					<div id="color_a" style="clear:both">
-						<div style="background-color:green;height:30px;width:30px"></div>
+						<div style="background-color:<?php echo $a['color']?>;height:30px;width:30px"></div>
 					</div>
 				</td>
 				<input type="hidden" id="a_valor_1" value="<?php echo $a['valor_1'] ?>">
@@ -38,7 +38,7 @@
 				</td>
 				<td>
 					<div id="color_b" style="clear:both">
-						<div style="background-color:yellow;height:30px;width:30px"></div>
+						<div style="background-color:<?php echo $b['color']?>;height:30px;width:30px"></div>
 					</div>
 				</td>
 				<input type="hidden" id="b_valor_1" value="<?php echo $b['valor_1'] ?>">
@@ -54,7 +54,7 @@
 				</td>
 				<td>
 					<div id="color_c" style="clear:both">
-						<div style="background-color:red;height:30px;width:30px"></div>
+						<div style="background-color:<?php echo $c['color']?>;height:30px;width:30px"></div>
 					</div>
 				</td>
 				<input type="hidden" id="c_valor_1" value="<?php echo $c['valor_1'] ?>">
@@ -101,7 +101,6 @@
 var hexDigits = new Array
         ("0","1","2","3","4","5","6","7","8","9","a","b","c","d","e","f"); 
 
-//Function to convert hex format to a rgb color
 function rgb2hex(rgb) {
  rgb = rgb.match(/^rgb\((\d+),\s*(\d+),\s*(\d+)\)$/);
  return "#" + hex(rgb[1]) + hex(rgb[2]) + hex(rgb[3]);
@@ -110,7 +109,6 @@ function rgb2hex(rgb) {
 function hex(x) {
   return isNaN(x) ? "00" : hexDigits[(x - x % 16) / 16] + hexDigits[x % 16];
  }
-
 /*---------------------------------------------------------------------*/
 $('#color_a').ColorPicker({
 
@@ -124,10 +122,14 @@ $('#color_a').ColorPicker({
 	onHide: function (colpkr) {
 
 		$(colpkr).fadeOut(500);
+
+		edit_color('a');
+
 		return false;
 	},
 
 	onChange: function (hsb, hex, rgb) {
+
 		$('#color_a div').css('backgroundColor', '#' + hex);
 	}
 });
@@ -144,10 +146,14 @@ $('#color_b').ColorPicker({
 	onHide: function (colpkr) {
 
 		$(colpkr).fadeOut(500);
+
+		edit_color('b');
+
 		return false;
 	},
 
 	onChange: function (hsb, hex, rgb) {
+
 		$('#color_b div').css('backgroundColor', '#' + hex);
 	}
 });
@@ -164,13 +170,49 @@ $('#color_c').ColorPicker({
 	onHide: function (colpkr) {
 
 		$(colpkr).fadeOut(500);
+
+		edit_color('c');
+
 		return false;
 	},
 
 	onChange: function (hsb, hex, rgb) {
+
 		$('#color_c div').css('backgroundColor', '#' + hex);
 	}
 });
+/*---------------------------------------------------------------------*/
+function edit_color(categoria){
+
+	var color = rgb2hex( $('#color_'+categoria+' div').css( "background-color" ) )
+
+	$.ajax({
+		url 	 : '<?php echo base_url() ?>cat_categorias/edit_color',
+		type 	 : 'post',
+		dataType : 'json',
+		data 	 : { categoria : categoria, color : color },
+
+		beforeSend : function(){
+
+			$('#msj').empty().html('Cambiando color...');
+		},
+		success : function(data){
+
+			$('#msj').empty();
+
+			if( data.type == false ){
+
+				dialogo('Error', data.message);
+			}
+		},
+		error : function(){
+
+			$('#msj').empty();
+
+			dialogo("Error", "Error al cambiar el color.");
+		}
+	});
+}
 /*---------------------------------------------------------------------*/
 function load_edit( categoria ){
 

@@ -66,6 +66,32 @@ class cat_categorias extends CI_Controller {
 	}
 
 
+
+
+
+
+
+	function edit_color(){
+
+		$data = array();
+
+		$datos['color'] = $this->input->post('color');
+		$categoria      = $this->input->post('categoria');
+
+		if( !$this->model_cat_categorias->edit_categoria( $categoria, $datos ) ){
+
+			$data['type']    = false;
+			$data['message'] = 'Error al cambiar el color.';
+
+		}else{
+
+			$data['type'] = true;
+		}
+
+		$this->output->set_content_type('application/json')->set_output( json_encode( $data ) );
+	}
+
+
 	
 
 }
