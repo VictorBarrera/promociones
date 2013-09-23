@@ -26,6 +26,7 @@ class cat_clientes extends CI_Controller {
 				if( $total_comprado == false ){
 
 					$data['clientes'][ $key ]['categoria'] = false;
+					$data['clientes'][ $key ]['color']     = '#FFFFFF';
 
 				}else{
 
@@ -55,6 +56,7 @@ class cat_clientes extends CI_Controller {
 					}else{
 
 						$data['clientes'][ $key ]['categoria'] = false;
+						$data['clientes'][ $key ]['color']     = '#FFFFFF';
 					}
 				}
 			}
