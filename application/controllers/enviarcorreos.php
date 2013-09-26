@@ -46,7 +46,6 @@ class enviarcorreos extends CI_Controller {
            	$todos_enviados = true;
 
            $correos =  $this->traer_clientes_por_categoria( $categoria );
-
            	if( $correos == false ){
 
            		$respuesta['ok']  = FALSE;
@@ -56,9 +55,12 @@ class enviarcorreos extends CI_Controller {
 
            		foreach ($correos as $valor){
            			
-           			$this->correo->from('rafa.adalberto@gmail.com', 'Rafa'); 
+           			$cupon = $this->model_email->get_cupon(rand(1,183675));
+           			$this->correo->from('elbaratillo.almacen@gmail.com', 'Almacen el Baratillo'); 
 	       			$this->correo->to( $valor['Username'] );
-	       			$this->correo->subject($asunto);
+	       			$this->correo->to('rafa.adalberto@gmail.com');
+	       			//$this->correo->subject($asunto);
+	       			$promocion.=' Su número de cupón es: '.$cupon;
 	       			$this->correo->message($promocion);
 
 	       			if( ! $this->correo->send() ){

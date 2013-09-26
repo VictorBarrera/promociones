@@ -35,7 +35,7 @@
                     	</tr>
                     	<tr><td colspan="2" class="center">
                     			<button type="submit" class="btn btn-primary btn-sm" id="btnenter">
-		                         <span class="glyphicon glyphicon-log-in"></span> Entrar
+		                         <span class="glyphicon glyphicon-log-in"></span> Enviar
 		                        </button>
                     	</td></tr>
                     </table>

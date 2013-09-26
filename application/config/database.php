@@ -45,7 +45,7 @@
 | the active record class
 */
 
-$db['sqlsrv']['hostname'] = 'OCHEVEZ-PC'; //el ip o nombre del Servidor SQL
+$db['sqlsrv']['hostname'] = 'RAFA-PC'; //el ip o nombre del Servidor SQL
 //$db['sqlsrv']['username'] = 'ochevez-PC';
 //$db['sqlsrv']['password'] = '';
 $db['sqlsrv']['database'] = 'etps4_tienda';

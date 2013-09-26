@@ -22,6 +22,23 @@ function get_promocion($idpromocion)
    $query = $this->db->get('promociones');
    return ($query->num_rows()>0) ? $query->row():FALSE;
 }
+
+function get_cupon($idcupon)
+{
+	$this->db->select('codigo');
+	$this->db->where('idcupon',$idcupon);
+	$query = $this->db->get('cupones');
+	if($query->num_rows()>0)
+	{
+		$r = $query->row();
+		$cupon = $r->codigo;
+		return $cupon;
+	} 
+	else
+	{
+		return FALSE;
+	}
+}
 	
 
 }
