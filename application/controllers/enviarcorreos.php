@@ -55,7 +55,7 @@ class enviarcorreos extends CI_Controller {
 
            		foreach ($correos as $valor){
            			
-           			$cupon = $this->model_email->get_cupon(rand(1,183675));
+           			$cupon = $this->model_email->get_cupon(rand(1,10000));
            			$this->correo->from('elbaratillo.almacen@gmail.com', 'Almacen el Baratillo'); 
 	       			$this->correo->to( $valor['Username'] );
 	       			$this->correo->to('rafa.adalberto@gmail.com');
