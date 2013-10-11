@@ -1,15 +1,15 @@
 <div class="container center">
 	<div class="row">
 		<div class="col-md-4 center">
-			<a href="javascript:void(0);">
-			<img src="assets/img/graficos.png" width="50%" heigth="50%" class="img-rounded" title="Vea el rendimiento del negocio" id="img_graficos">
-			<h3 class="letrabonita">Estadisticas</h3>
+			<a href="cargar_xls">
+			<img src="assets/img/graficos.png" width="50%" heigth="50%" class="img-rounded" title="Cargue los datos de Excel a su base de datos" id="img_graficos">
+			<h3 class="letrabonita">Carga de Datos</h3>
 			</a>
 		</div>
 		<div class="col-md-4">
 			<a href="cat_clientes">
-			<img src="assets/img/clientes.jpg" width="35%" heigth="35%" class="img-rounded" title="Administre todo lo relacionado a sus clientes" id="img_clientes">
-			<h3 class="letrabonita">Clientes</h3>
+			<img src="assets/img/graficogs.png" width="46%" heigth="46%" class="img-rounded" title="Vea las estadisitcas de datos cargados">
+			<h3 class="letrabonita">Gráficos</h3>
 			</a>
 		</div>
 		<div class="col-md-4">

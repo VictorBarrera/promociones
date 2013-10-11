@@ -38,7 +38,7 @@ CREATE TABLE `categorias` (
 
 LOCK TABLES `categorias` WRITE;
 /*!40000 ALTER TABLE `categorias` DISABLE KEYS */;
-INSERT INTO `categorias` VALUES (1,'c',1001.00,1000000.00,'#2dad3c'),(2,'b',101.00,1000.00,'#ffcd05'),(3,'a',1.00,100.00,'#a36548');
+INSERT INTO `categorias` VALUES (1,'c',1001.00,1000000.00,'#2dad3c'),(2,'b',101.00,1000.00,'#05ff3f'),(3,'a',1.00,100.00,'#a36548');
 /*!40000 ALTER TABLE `categorias` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -83,7 +83,7 @@ CREATE TABLE `cupones` (
   `estado` varchar(20) DEFAULT NULL,
   `fechadeenvio` date DEFAULT NULL,
   PRIMARY KEY (`idcupon`)
-) ENGINE=InnoDB AUTO_INCREMENT=183676 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=10001 DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -104,9 +104,10 @@ DROP TABLE IF EXISTS `productos`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `productos` (
-  `idproducto` int(11) NOT NULL DEFAULT '0',
+  `idproducto` int(11) NOT NULL AUTO_INCREMENT,
   `descripcion` varchar(50) DEFAULT NULL,
-  `precio` double DEFAULT NULL,
+  `cantidad` int(11) DEFAULT NULL,
+  `precioUnitario` double DEFAULT NULL,
   PRIMARY KEY (`idproducto`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
@@ -117,7 +118,6 @@ CREATE TABLE `productos` (
 
 LOCK TABLES `productos` WRITE;
 /*!40000 ALTER TABLE `productos` DISABLE KEYS */;
-INSERT INTO `productos` VALUES (1,'televisor',150),(2,'refrigeradora',250),(3,'cocina',260),(4,'celular',540),(5,'lavadora',369),(6,'plancha',26),(7,'vestido',78),(8,'zapatos',150),(9,'play station 4',684),(10,'nintendo wii',541),(11,'camara digital',210),(12,'cama',126),(13,'secadora de pelo',125),(14,'comedor',561),(15,'bateria de cocina',150),(16,'pantalla lcd',698),(17,'laptop',840),(18,'computadora destok',459),(19,'mouse',12),(20,'monitor lcd',125),(21,'discoduro externo',100),(22,'edredon',156),(23,'juguetera',258),(24,'licuadora',98),(25,'chinero',145),(26,'ventilador',80),(27,'aire acondicionado',269),(28,'mueble de pc',35),(29,'dvd',50),(30,'ropero',400);
 /*!40000 ALTER TABLE `productos` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -146,6 +146,31 @@ LOCK TABLES `promociones` WRITE;
 /*!40000 ALTER TABLE `promociones` DISABLE KEYS */;
 INSERT INTO `promociones` VALUES (1,'Cupones de descuento','2012-01-12','2012-02-12','Por cada compra mayor a $10 se le dar?í un cup??n al cliente para que lo canjee por la mierda que ?®l quiera.'),(2,'Comida gratis','2013-05-12','2013-05-12','Por cada compra mayor de $100 se les dar?í un vale de pollo campero para que se vayan hartar gratis.');
 /*!40000 ALTER TABLE `promociones` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `prueba`
+--
+
+DROP TABLE IF EXISTS `prueba`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `prueba` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `Nombre` varchar(20) DEFAULT NULL,
+  `Apellido` varchar(20) DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=70 DEFAULT CHARSET=latin1;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `prueba`
+--
+
+LOCK TABLES `prueba` WRITE;
+/*!40000 ALTER TABLE `prueba` DISABLE KEYS */;
+INSERT INTO `prueba` VALUES (1,'Rafael','Parada'),(2,'José','Pérez'),(3,'Ana','Blanco'),(4,'Rafael','Parada'),(5,'José','Pérez'),(6,'Ana','Blanco'),(7,'Rafael','Parada'),(8,'José','Pérez'),(9,'Ana','Blanco'),(10,'Rafael','Parada'),(11,'José','Pérez'),(12,'Ana','Blanco'),(13,'Rafael','Parada'),(14,'José','Pérez'),(15,'Ana','Blanco'),(16,'Rafael','Parada'),(17,'José','Pérez'),(18,'Ana','Blanco'),(19,'Rafael','Parada'),(20,'José','Pérez'),(21,'Ana','Blanco'),(22,'Rafael','Parada'),(23,'José','Pérez'),(24,'Ana','Blanco'),(25,'Rafael','Parada'),(26,'José','Pérez'),(27,'Ana','Blanco'),(28,'Rafael','Parada'),(29,'José','Pérez'),(30,'Ana','Blanco'),(31,'Rafael','Parada'),(32,'José','Pérez'),(33,'Ana','Blanco'),(34,'Rafael','Parada'),(35,'José','Pérez'),(36,'Ana','Blanco'),(37,'Rafael','Parada'),(38,'José','Pérez'),(39,'Ana','Blanco'),(40,'Rafael','Parada'),(41,'José','Pérez'),(42,'Ana','Blanco'),(43,'Rafael','Parada'),(44,'José','Pérez'),(45,'Ana','Blanco'),(46,'Rafael','Parada'),(47,'José','Pérez'),(48,'Ana','Blanco'),(49,'Rafael','Parada'),(50,'José','Pérez'),(51,'Ana','Blanco'),(52,'Rafael','Parada'),(53,'José','Pérez'),(54,'Ana','Blanco'),(55,'Rafael','Parada'),(56,'José','Pérez'),(57,'Ana','Blanco'),(58,'Rafael','Parada'),(59,'José','Pérez'),(60,'Ana','Blanco'),(61,'Rafael','Parada'),(62,'José','Pérez'),(63,'Ana','Blanco'),(64,'Rafael','Parada'),(65,'José','Pérez'),(66,'Ana','Blanco'),(67,'Rafael','Parada'),(68,'José','Pérez'),(69,'Ana','Blanco');
+/*!40000 ALTER TABLE `prueba` ENABLE KEYS */;
 UNLOCK TABLES;
 
 --
@@ -258,4 +283,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2013-09-26  0:44:57
+-- Dump completed on 2013-10-11  8:33:19
