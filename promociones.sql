@@ -109,7 +109,7 @@ CREATE TABLE `productos` (
   `cantidad` int(11) DEFAULT NULL,
   `precioUnitario` double DEFAULT NULL,
   PRIMARY KEY (`idproducto`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=31 DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -118,6 +118,7 @@ CREATE TABLE `productos` (
 
 LOCK TABLES `productos` WRITE;
 /*!40000 ALTER TABLE `productos` DISABLE KEYS */;
+INSERT INTO `productos` VALUES (1,'televisor',150,200),(2,'refrigeradora',250,654),(3,'refrigeradora',250,654),(4,'celular',540,256),(5,'lavadora',369,456),(6,'plancha',26,45),(7,'vestido',78,45),(8,'k',150,13),(9,'dfdf',0,0),(10,'nintendo wii',541,500),(11,'camara digital',210,200),(12,'camara digital',210,200),(13,'secadora de pelo',125,89),(14,'comedor',561,200),(15,'bateria de cocina',150,200),(16,'pantalla lcd',698,456),(17,'laptop',840,223),(18,'computadora destok',459,458),(19,'mouse',12,21),(20,'monitor lcd',125,123),(21,'discoduro externo',100,124),(22,'edredon',156,235),(23,'juguetera',258,123),(24,'licuadora',98,125),(25,'chinero',145,35),(26,'ventilador',80,42),(27,'aire acondicionado',269,45),(28,'mueble de pc',35,23),(29,'dvd',50,12),(30,'ropero',400,155);
 /*!40000 ALTER TABLE `productos` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -222,6 +223,33 @@ LOCK TABLES `tweets` WRITE;
 UNLOCK TABLES;
 
 --
+-- Table structure for table `upload_log`
+--
+
+DROP TABLE IF EXISTS `upload_log`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `upload_log` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `buenos` int(11) DEFAULT NULL,
+  `malos` int(11) DEFAULT NULL,
+  `total` int(11) DEFAULT NULL,
+  `fecha_carga` date DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=latin1;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `upload_log`
+--
+
+LOCK TABLES `upload_log` WRITE;
+/*!40000 ALTER TABLE `upload_log` DISABLE KEYS */;
+INSERT INTO `upload_log` VALUES (1,28,2,30,'2013-10-16');
+/*!40000 ALTER TABLE `upload_log` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
 -- Table structure for table `usuarios`
 --
 
@@ -283,4 +311,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2013-10-11  8:33:19
+-- Dump completed on 2013-10-16 15:18:00
