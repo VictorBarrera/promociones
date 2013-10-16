@@ -42,14 +42,14 @@
                   </div>
                   <div class="navbar-collapse collapse navbar-inverse-collapse">
                     <ul class="nav navbar-nav">
-                      <li class="active"><a href="<?php echo base_url() ?>cat_clientes">Clientes</a></li>
-                      <li><a href="promos">Promociones</a></li>
-                      <li class="dropdown">
+                      <li class="active"><a href="<?php echo base_url() ?>cargar_xls">Cargar Datos</a></li>
+                      <li><a href="grafico_logs">Graficos de carga</a></li>
+                      <!--li class="dropdown">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown">Mantenimientos <b class="caret"></b></a>
                         <ul class="dropdown-menu">
                           <li><a href="cat_categorias">Categorías</a></li>
                         </ul>
-                      </li>
+                      </li-->
                     </ul>
                   </div><!-- /.nav-collapse -->
                 </div><!-- /.container -->

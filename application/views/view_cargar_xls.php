@@ -37,23 +37,23 @@
                                    <br><br>
                                    <table class=" table table-bordered table-condensed table-hover" width="100%">
                                        <thead>
-                                           <th>Nombre</th>
-                                           <th>Desde</th>
-                                           <th>Hasta</th>
-                                           <th>Descripción</th>
+                                           <th>Fecha de carga</th>
+                                           <th>Buenos</th>
+                                           <th>Malos</th>
+                                           <th>Total</th>
                                        </thead>
                                        <tbody>
-                                          <?php if($promociones):?>
-                                             <?php foreach ($promociones as $key => $value): ?>
+                                          <?php if($logs):?>
+                                             <?php foreach ($logs as $key => $value): ?>
                                                  <tr>
-                                                     <td><?php echo $value->nombre_promo?></td>
-                                                     <td nowrap><?php echo fecha_auser($value->fecha_desde)?></td>
-                                                     <td nowrap><?php echo fecha_auser($value->fecha_hasta)?></td>
-                                                     <td><?php echo $value->descripcion?></td>
+                                                     <td><?php echo fecha_auser($value->fecha_carga)?></td>
+                                                     <td><?php echo $value->buenos?></td>
+                                                     <td><?php echo $value->malos?></td>
+                                                     <td><?php echo $value->total?></td>
                                                  </tr>
                                              <?php endforeach ?>
                                           <?php else:?>
-                                          <tr><td colspan="4" class="center">No hay promociones registradas</td></tr>
+                                          <tr><td colspan="4" class="center">No hay Datos registradas</td></tr>
                                          <?php endif ?>
                                        </tbody>
                                    </table>
